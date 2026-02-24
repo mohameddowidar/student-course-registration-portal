@@ -1,0 +1,133 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Course Portal</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial;
+            background:#0d47a1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            background:white;
+            width:350px;
+            border-radius:14px;
+            box-shadow:0 10px 25px rgba(0,0,0,.3);
+            overflow:hidden;
+        }
+
+        .tabs{
+            display:flex;
+        }
+
+        .tabs button{
+            flex:1;
+            padding:12px;
+            border:none;
+            background:#e3f2fd;
+            cursor:pointer;
+            font-weight:bold;
+        }
+
+        .tabs button.active{
+            background:#0d47a1;
+            color:white;
+        }
+
+        .form{
+            padding:25px;
+            display:none;
+        }
+
+        .form.active{
+            display:block;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border-radius:6px;
+            border:1px solid #ccc;
+        }
+
+        button.submit{
+            width:100%;
+            padding:10px;
+            background:#0d47a1;
+            color:white;
+            border:none;
+            border-radius:6px;
+            margin-top:10px;
+            cursor:pointer;
+        }
+
+        small{
+            display:block;
+            margin-top:10px;
+            text-align:center;
+            color:#666;
+        }
+
+        @media(max-width:400px){
+            .container{width:90%}
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="tabs">
+        <button id="loginTab" class="active" onclick="showLogin()">Login</button>
+        <button id="signupTab" onclick="showSignup()">Sign Up</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form class="form active" id="loginForm" action="login" method="post">
+        <h2>Welcome Back</h2>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button class="submit">Login</button>
+        <small>Access your dashboard</small>
+    </form>
+
+    <!-- SIGNUP -->
+    <form class="form" id="signupForm" action="signup" method="post">
+        <h2>Create Account</h2>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button class="submit">Sign Up</button>
+        <small>Join the platform</small>
+    </form>
+
+</div>
+
+<script>
+    function showLogin(){
+        loginForm.classList.add('active')
+        signupForm.classList.remove('active')
+        loginTab.classList.add('active')
+        signupTab.classList.remove('active')
+    }
+
+    function showSignup(){
+        signupForm.classList.add('active')
+        loginForm.classList.remove('active')
+        signupTab.classList.add('active')
+        loginTab.classList.remove('active')
+    }
+</script>
+
+</body>
+</html>

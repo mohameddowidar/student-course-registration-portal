@@ -1,0 +1,12 @@
+<Context path="/myapp" reloadable="true" docBase="myapp">
+    <!-- أي إعدادات إضافية ممكن تحطها هنا -->
+
+    <!-- مثال: إعداد DataSource لو عندك قاعدة بيانات -->
+    <!--
+    <Resource name="jdbc/MyDB" auth="Container" type="javax.sql.DataSource"
+              maxTotal="20" maxIdle="10" maxWaitMillis="-1"
+              username="root" password="password"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/mydb"/>
+    -->
+</Context>
